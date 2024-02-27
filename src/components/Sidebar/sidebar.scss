@@ -1,11 +1,12 @@
 .sidebar {
-        height: 100vh;
-        width: 230px;
-        padding: 2px;
-        border: 1px solid;
-        border-radius: 31px;
-        box-sizing: border-box;
-        margin-left: 3px;
+    height: 100vh;
+    width: 230px;
+    padding: 2px;
+    border: 1px solid;
+    border-radius: 31px;
+    box-sizing: border-box;
+    margin-left: 3px;
+
     .nav {
         display: flex;
         flex-direction: column;
@@ -37,18 +38,6 @@
             .logo-title {
                 font-size: 1.2rem;
             }
-
-            .button-wrapper {
-                cursor: pointer;
-                position: absolute;
-                right: -80px;
-                width: 30px;
-                height: 30px;
-                border-radius: 30px;
-                background-color: #fff;
-                color: #65758c;
-                border: 1px solid transparent;
-            }
         }
 
         .wrapper-item {
@@ -79,11 +68,76 @@
         }
     }
 
-    &.opened {
-        .button-wrapper {
-            background-color: #e2e8f0 !important;
-            color: #66768d !important;
-            right: -40px !important;
-        }
+    .button-wrapper {
+        cursor: pointer;
+        position: absolute;
+        // right: -80px;
+        width: 30px;
+        height: 30px;
+        border-radius: 30px;
+        // background-color: #fff;
+        // color: #65758c;
+        border: 1px solid transparent;
+        animation-duration: 1s;
+        animation-name: isclosedbtn;
     }
+
+    &.opened {
+        .nav {
+            .logo {
+                .button-wrapper {
+                    animation-duration: 1s;
+                    animation-name: isopenedbtn;
+                }
+            }
+        }
+
+    }
+}
+
+@keyframes isopenedbtn {
+    0% {
+        color: #000 !important;
+        background: #000;
+        right: -80px;
+        // background-color: #e2e8f0 !important;
+        // color: #66768d !important;
+    }
+
+    ;
+
+    80% {
+        right: -45px;
+        color: #000;
+        background: #000;
+    }
+
+    100% {
+        right: -40px !important;
+        color: #000;
+        background: #000;
+    }
+}
+@keyframes isclosedbtn{
+    0% {
+        // color: #000 !important;
+        // background: #000;
+        right: -40px;
+        // background-color: #e2e8f0 !important;
+        // color: #66768d !important;
+    }
+
+    ;
+
+    80% {
+        right: -75px;
+        color: #000;
+        background: #000;
+    }
+
+    100% {
+        right: -80px !important;
+        color: #000;
+        background: #000;
+    } 
 }
