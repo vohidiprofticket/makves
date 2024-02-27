@@ -1,0 +1,83 @@
+.sidebar {
+    .nav {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 230px;
+        border: 1px solid #292e37;
+        box-sizing: border-box;
+        border-radius: 30px;
+        box-shadow: 0px 0px 2px #292e37;
+        margin-left: 2px;
+        padding: 30px 20px;
+        background: #fff;
+
+        .logo {
+            position: relative;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            margin-bottom: 50px;
+            color: #1b3aca;
+            font-size: 2rem;
+            font-weight: 700;
+
+            .image-responsive {
+                width: 30px;
+                object-fit: cover;
+                margin-right: 5px;
+            }
+
+            .logo-title {
+                font-size: 1.2rem;
+            }
+
+            .button-wrapper {
+                cursor: pointer;
+                position: absolute;
+                right: -40px;
+                width: 30px;
+                height: 30px;
+                border-radius: 30px;
+                background-color: #fff;
+                color: #65758c;
+                border: 1px solid transparent;
+            }
+        }
+
+        .wrapper-item {
+            width: 100%;
+            transition: all 0.2s ease-in;
+            color: #6c7b91;
+            cursor: pointer;
+            padding: 8px 10px;
+            border-radius: 5px;
+            font-weight: 700;
+            box-sizing: border-box;
+            margin-bottom: 12px;
+
+            span {
+                margin-left: 15px;
+            }
+
+            &.active {
+                color: #1b3acb;
+                background: #f0f2ff;
+            }
+
+            &:hover {
+                transition: all 0.2s ease-out;
+                color: #344256;
+                background: #f1f5f9;
+            }
+        }
+    }
+
+    &.opened {
+        .button-wrapper {
+            background-color: #e2e8f0 !important;
+            color: #66768d !important;
+        }
+    }
+}
