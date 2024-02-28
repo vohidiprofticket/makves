@@ -1,11 +1,13 @@
 .sidebar {
     height: 100vh;
-    width: 230px;
     padding: 2px;
+    width: 57px;
     border: 1px solid;
     border-radius: 31px;
     box-sizing: border-box;
     margin-left: 3px;
+    animation-duration: 1s;
+    animation-name: hideblock;
 
     .nav {
         display: flex;
@@ -15,10 +17,10 @@
         box-sizing: border-box;
         border-radius: 30px;
         box-shadow: 0px 0px 2px #f0f3f7;
-        padding: 30px 20px;
         background: #fff;
         height: 100%;
-
+        padding: 30px 5px;
+        transition: all 0.5s;
         .logo {
             display: flex;
             position: relative;
@@ -29,9 +31,8 @@
             font-size: 2rem;
             font-weight: 700;
             .image-responsive {
-                width: 30px;
+                width: 40px;
                 object-fit: cover;
-                margin-right: 5px;
             }
 
             .logo-title {
@@ -60,6 +61,7 @@
         }
 
         .wrapper-item {
+            display: flex;
             width: 100%;
             transition: all 0.2s ease-in;
             color: #6c7b91;
@@ -69,8 +71,6 @@
             font-weight: 700;
             box-sizing: border-box;
             margin-bottom: 12px;
-            display: flex;
-
             span {
                 width: 0;
                 display: block;
@@ -95,10 +95,14 @@
 
 
     &.opened {
+        width: 230px;
+        animation-duration: 1s;
+        animation-name: showblock;
         .nav {
+            padding: 30px 20px;
+            transition: all 0.5s;
             .logo {
                 position: relative;
-
                 .button-wrapper {
                     animation-duration: 1s;
                     animation-name: isopenedbtn;
@@ -200,5 +204,24 @@
         display: inline-block;
         width: 0;
         margin-left: 0;
+    }
+}
+
+@keyframes showblock {
+    0% {
+        width: 57px;
+    }
+    100% {
+        width: 230px;
+    }
+}
+
+@keyframes hideblock {
+    0% {
+        width: 230px;
+    }
+
+    100% {
+        width: 57px;
     }
 }
