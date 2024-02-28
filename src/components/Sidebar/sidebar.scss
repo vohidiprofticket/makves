@@ -6,7 +6,7 @@
     border-radius: 31px;
     box-sizing: border-box;
     margin-left: 3px;
-    animation-duration: 1s;
+    animation-duration: 0.5s;
     animation-name: hideblock;
 
     .nav {
@@ -21,6 +21,7 @@
         height: 100%;
         padding: 30px 5px;
         transition: all 0.5s;
+
         .logo {
             display: flex;
             position: relative;
@@ -30,6 +31,7 @@
             color: #1b3aca;
             font-size: 2rem;
             font-weight: 700;
+
             .image-responsive {
                 width: 40px;
                 object-fit: cover;
@@ -40,7 +42,7 @@
                 font-size: 1.2rem;
                 width: 0%;
                 margin-left: 0px;
-                animation-duration: 1s;
+                animation-duration: 0.5s;
                 animation-name: hidetext;
                 overflow: hidden;
             }
@@ -52,16 +54,17 @@
                 width: 30px;
                 height: 30px;
                 border-radius: 30px;
-                // background-color: #fff;
-                // color: #65758c;
+                background-color: #fff;
+                color: #65758c;
                 border: 1px solid transparent;
-                animation-duration: 1s;
+                animation-duration: 0.5s;
                 animation-name: isclosedbtn;
             }
         }
 
         .wrapper-item {
             display: flex;
+            align-items: center;
             width: 100%;
             transition: all 0.2s ease-in;
             color: #6c7b91;
@@ -71,11 +74,12 @@
             font-weight: 700;
             box-sizing: border-box;
             margin-bottom: 12px;
+
             span {
                 width: 0;
                 display: block;
                 overflow: hidden;
-                animation-duration: 1s;
+                animation-duration: 0.5s;
                 animation-name: hidetext;
                 margin-left: 0px;
             }
@@ -96,15 +100,19 @@
 
     &.opened {
         width: 230px;
-        animation-duration: 1s;
+        animation-duration: 0.5s;
         animation-name: showblock;
+
         .nav {
             padding: 30px 20px;
             transition: all 0.5s;
+
             .logo {
                 position: relative;
                 .button-wrapper {
-                    animation-duration: 1s;
+                    background-color: #e2e8f0;
+                    color: #69788f;
+                    animation-duration: 0.5s;
                     animation-name: isopenedbtn;
                     right: -40px;
                 }
@@ -112,7 +120,7 @@
                 .logo-title {
                     width: 100%;
                     margin-left: 15px;
-                    animation-duration: 1s;
+                    animation-duration: 0.5s;
                     animation-name: showtext;
                 }
             }
@@ -122,7 +130,7 @@
             span {
                 width: 100%;
                 margin-left: 15px;
-                animation-duration: 1s;
+                animation-duration: 0.5s;
                 animation-name: showtext;
             }
         }
@@ -132,45 +140,29 @@
 
 @keyframes isopenedbtn {
     0% {
-        // color: #000 !important;
-        // background: #000;
         right: -80px;
-        // background-color: #e2e8f0 !important;
-        // color: #66768d !important;
     }
 
     80% {
         right: -45px;
-        color: #000;
-        background: #000;
     }
 
     100% {
         right: -40px !important;
-        color: #000;
-        background: #000;
     }
 }
 
 @keyframes isclosedbtn {
     0% {
-        // color: #000 !important;
-        // background: #000;
         right: -40px;
-        // background-color: #e2e8f0 !important;
-        // color: #66768d !important;
     }
 
     80% {
         right: -75px;
-        color: #000;
-        background: #000;
     }
 
     100% {
         right: -80px !important;
-        color: #000;
-        background: #000;
     }
 }
 
@@ -180,6 +172,7 @@
         width: 0;
         margin-left: 0;
     }
+
     100% {
         display: inline-block;
         width: 100%;
@@ -211,6 +204,7 @@
     0% {
         width: 57px;
     }
+
     100% {
         width: 230px;
     }
