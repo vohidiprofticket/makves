@@ -37,6 +37,24 @@
 
             .logo-title {
                 font-size: 1.2rem;
+                width: 0%;
+                margin-left: 15px;
+                animation-duration: 1s;
+                animation-name: hidetext;
+            }
+
+            .button-wrapper {
+                cursor: pointer;
+                position: absolute;
+                right: -80px;
+                width: 30px;
+                height: 30px;
+                border-radius: 30px;
+                // background-color: #fff;
+                // color: #65758c;
+                border: 1px solid transparent;
+                animation-duration: 1s;
+                animation-name: isclosedbtn;
             }
         }
 
@@ -50,9 +68,16 @@
             font-weight: 700;
             box-sizing: border-box;
             margin-bottom: 12px;
+            display: flex;
 
             span {
                 margin-left: 15px;
+                width: 0;
+                display: block;
+                overflow: hidden;
+                animation-duration: 1s;
+                animation-name: hidetext;
+
             }
 
             &.active {
@@ -68,27 +93,31 @@
         }
     }
 
-    .button-wrapper {
-        cursor: pointer;
-        position: absolute;
-        // right: -80px;
-        width: 30px;
-        height: 30px;
-        border-radius: 30px;
-        // background-color: #fff;
-        // color: #65758c;
-        border: 1px solid transparent;
-        animation-duration: 1s;
-        animation-name: isclosedbtn;
-    }
 
     &.opened {
         .nav {
             .logo {
+                position: relative;
+
                 .button-wrapper {
                     animation-duration: 1s;
                     animation-name: isopenedbtn;
+                    right: -40px;
                 }
+
+                .logo-title {
+                    width: 100%;
+                    animation-duration: 1s;
+                    animation-name: showtext;
+                }
+            }
+        }
+
+        .wrapper-item {
+            span {
+                width: 100%;
+                animation-duration: 1s;
+                animation-name: showtext;
             }
         }
 
@@ -97,14 +126,12 @@
 
 @keyframes isopenedbtn {
     0% {
-        color: #000 !important;
-        background: #000;
+        // color: #000 !important;
+        // background: #000;
         right: -80px;
         // background-color: #e2e8f0 !important;
         // color: #66768d !important;
     }
-
-    ;
 
     80% {
         right: -45px;
@@ -118,7 +145,8 @@
         background: #000;
     }
 }
-@keyframes isclosedbtn{
+
+@keyframes isclosedbtn {
     0% {
         // color: #000 !important;
         // background: #000;
@@ -126,8 +154,6 @@
         // background-color: #e2e8f0 !important;
         // color: #66768d !important;
     }
-
-    ;
 
     80% {
         right: -75px;
@@ -139,5 +165,38 @@
         right: -80px !important;
         color: #000;
         background: #000;
-    } 
+    }
+}
+
+@keyframes showtext {
+    0% {
+        display: inline;
+        width: 0;
+        margin-left: 0;
+    }
+    100% {
+        display: inline;
+        width: 100%;
+        margin-left: 15px;
+    }
+}
+
+@keyframes hidetext {
+    0% {
+        display: inline;
+        width: 100%;
+        margin-left: 15px;
+    }
+
+    80% {
+        display: inline;
+        width: 10%;
+        margin-left: 15px;
+    }
+
+    100% {
+        display: inline;
+        width: 0;
+        margin-left: 0;
+    }
 }
